@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34221.43
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlmoxarifadoFS2", "AlmoxarifadoFS2\AlmoxarifadoFS2.csproj", "{8AB7F212-DE07-40DB-A01C-5232B1CD002E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8AB7F212-DE07-40DB-A01C-5232B1CD002E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8AB7F212-DE07-40DB-A01C-5232B1CD002E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8AB7F212-DE07-40DB-A01C-5232B1CD002E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8AB7F212-DE07-40DB-A01C-5232B1CD002E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C21A79F2-001A-4D9D-BAB5-D2CEBE69AEB6}
+	EndGlobalSection
+EndGlobal
