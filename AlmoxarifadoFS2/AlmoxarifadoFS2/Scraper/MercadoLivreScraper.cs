@@ -52,6 +52,7 @@ public class MercadoLivreScraper
         }
     }
 
+
     private void RegistrarLog(string codRob, string usuRob, DateTime dateLog, string processo, string infLog, int idProd)
     {
         using (var context = new LogContext())

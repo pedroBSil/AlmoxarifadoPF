@@ -30,11 +30,11 @@ namespace AlmoxarifadoFS2.Send
         }
 
         // Enviar mensagem no whatsapp
-        public static void SendWhatsApp(string Comparacao, string nomeProdutoMercadoLivre, string precoProdutoMercadoLivre, string nomeProdutokabum, string precoProdutokabum, string numUsuario)
+        public static void SendWhatsApp(string Comparacao, string nomeProdutoMercadoLivre, string precoProdutoMercadoLivre, string nomeProdutoMagazineLuiza, string precoProdutoMagazineLuiza, string numUsuario)
         {
 
             string message = $"Produto do Mercado Livre: {nomeProdutoMercadoLivre}\nPreço: R$ {precoProdutoMercadoLivre}\n" +
-                             $"Produto do kabum: {nomeProdutokabum}\nPreço: {precoProdutokabum}\n" +
+                             $"Produto do Magazine Luiza: {nomeProdutoMagazineLuiza}\nPreço: {precoProdutoMagazineLuiza}\n" +
                              $"{Comparacao}\n";
 
             try

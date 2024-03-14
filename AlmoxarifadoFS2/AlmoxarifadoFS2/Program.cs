@@ -12,7 +12,6 @@ using System.ComponentModel.DataAnnotations;
 using System.Security.Cryptography.X509Certificates;
 using AlmoxarifadoFS2.ComparacaoDePrecos;
 using AlmoxarifadoFS2.Send;
-    
 
 // Classe de contexto do banco de dados
 public class LogContext : DbContext
@@ -24,7 +23,7 @@ public class LogContext : DbContext
 
         //optionsBuilder.UseSqlServer("Server=PC03LAB2512\\SENAI;Database=WebScrapingDb2;User Id=sa;Password=senai.123");
 
-        optionsBuilder.UseSqlServer("Server=PC03LAB2523\\SENAI; Initial Catalog=Almoxarifado ;User Id=sa;Password=senai.123;");
+        optionsBuilder.UseSqlServer("Server=PC03LAB2523\\SENAI; Initial Catalog=AlmoxarifadoFS2 ;User Id=sa;Password=senai.123;");
     }
 }
 
@@ -109,22 +108,22 @@ class Program
                                 MercadoLivreScraper mercadoLivreScraper = new MercadoLivreScraper();
                                 string mercadoLivre = mercadoLivreScraper.ObterPreco(produto.Nome, produto.Id);
 
-                                kabumScraper magazineLuizaScraper = new kabumScraper();
-                                string kabum = magazineLuizaScraper.ObterPreco(produto.Nome, produto.Id);
+                                MagazineLuizaScraper magazineLuizaScraper = new MagazineLuizaScraper();
+                                string magazineLuiza = magazineLuizaScraper.ObterPreco(produto.Nome, produto.Id);
 
-                                string linkMag = kabumScraper.PegarLink(produto.Nome);
+                                string linkMag = MagazineLuizaScraper.PegarLink(produto.Nome);
                                 string linkMer = MercadoLivreScraper.PegarLink(produto.Nome);
 
-                                string dadosComparacao = ComparacaoPreco.CompararPreco(mercadoLivre, kabum, linkMag, linkMer);
+                                string dadosComparacao = ComparacaoPreco.CompararPreco(mercadoLivre, magazineLuiza, linkMag, linkMer);
 
                                 Console.WriteLine(dadosComparacao);
 
-                                SendEmail.EnviarEmail(dadosComparacao, produto.Nome, mercadoLivre, produto.Nome, kabum, emailResposta);
+                                SendEmail.EnviarEmail(dadosComparacao, produto.Nome, mercadoLivre, produto.Nome, magazineLuiza, emailResposta);
 
                                 if (optZap != null)
                                 {
 
-                                    SendZap.SendWhatsApp(dadosComparacao, produto.Nome, mercadoLivre, produto.Nome, kabum, optZap);
+                                    SendZap.SendWhatsApp(dadosComparacao, produto.Nome, mercadoLivre, produto.Nome, magazineLuiza, optZap);
                                 }
 
                             }

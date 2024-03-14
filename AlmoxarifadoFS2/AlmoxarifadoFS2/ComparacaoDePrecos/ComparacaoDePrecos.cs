@@ -8,24 +8,24 @@ namespace AlmoxarifadoFS2.ComparacaoDePrecos
 {
     internal class ComparacaoPreco
     {
-        public static string CompararPreco(string precoMerL, string precokab, string linkkab, string linkMer)
+        public static string CompararPreco(string precoMerL, string precoMagL, string linkMag, string linkMer)
         {
             char[] removerCaracteres = { 'R', '$', ' ' };
 
-            double precokabum = Convert.ToDouble(precokab.Trim(removerCaracteres));
+            double precoMagazine = Convert.ToDouble(precoMagL.Trim(removerCaracteres));
             double precoMercado = Convert.ToDouble(precoMerL.Trim(removerCaracteres));
 
             Console.WriteLine(precoMercado);
-            Console.WriteLine(precokabum);
+            Console.WriteLine(precoMagazine);
 
-            if (precokabum > precoMercado)
+            if (precoMagazine > precoMercado)
             {
                 return "Melhor preço: Mercado Livre\n" + $"Link do produto:{linkMer}";
 
             }
-            else if (precoMercado > precokabum)
+            else if (precoMercado > precoMagazine)
             {
-                return "Melhor preço: kabum\n" + $"Link do produto:{linkkab}";
+                return "Melhor preço: Magazine Luíza\n" + $"Link do produto:{linkMag}";
             }
             else
             {
@@ -34,4 +34,3 @@ namespace AlmoxarifadoFS2.ComparacaoDePrecos
         }
     }
 }
-   
